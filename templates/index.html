@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Audio to Text & Summary</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 20px auto; }
+        h1 { margin-bottom: 0.5rem; }
+        .box { border: 1px solid #ccc; padding: 15px; border-radius: 6px; margin-top: 15px; }
+        label { display: block; margin-bottom: 8px; }
+        input[type="file"] { margin-bottom: 10px; }
+        button { padding: 6px 14px; }
+        pre { white-space: pre-wrap; background: #f8f8f8; padding: 10px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>Audio to Text &amp; Summary</h1>
+    <p>Upload an audio file to get transcript and summary.</p>
+
+    <div class="box">
+        <form action="/ui" method="post" enctype="multipart/form-data">
+            <label for="file">Choose audio file (wav, mp3, m4a, flac, ogg)</label>
+            <input type="file" id="file" name="file" required>
+            <br>
+            <button type="submit">Process</button>
+        </form>
+    </div>
+
+    {% if result %}
+    <div class="box">
+        <h2>Result for: {{ result.filename }}</h2>
+
+        <h3>Transcript</h3>
+        <pre>{{ result.transcript }}</pre>
+
+        <h3>Summary</h3>
+        <pre>{{ result.summary }}</pre>
+    </div>
+    {% endif %}
+</body>
+</html>

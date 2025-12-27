@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual envs
+.venv/
+venv/
+ENV/
+env/
+
+# Logs
+*.log
+
+# Local runtime/output folders (adjust if you actually want to commit outputs)
+output/
+processed/
+temp/
+temp_done/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
